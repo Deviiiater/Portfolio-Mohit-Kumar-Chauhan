@@ -65,7 +65,7 @@ Key Objectives:
         }
     ];
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8 overflow-y-auto h-full">
             <h2 className="text-2xl font-bold mb-6 text-white">
                 <span className="text-editor-blue">git</span> log <span className="text-gray-500">--oneline</span>
             </h2>

@@ -2,13 +2,13 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="p-8 text-editor-text flex flex-col md:flex-row gap-8 items-start">
+        <div className="p-4 md:p-8 text-editor-text flex flex-col md:flex-row gap-8 items-start overflow-y-auto h-full">
             <div className="flex-1">
                 <h2 className="text-3xl font-bold mb-6 text-white">
                     <span className="text-editor-blue">class</span> <span className="text-editor-yellow">FullStackDeveloper</span> <span className="text-editor-text">{'{'}</span>
                 </h2>
 
-                <div className="pl-8 space-y-4 font-mono">
+                <div className="pl-4 md:pl-8 space-y-4 font-mono text-sm md:text-base">
                     <div>
                         <span className="text-editor-blue">constructor</span>() {'{'}
                         <div className="pl-8">

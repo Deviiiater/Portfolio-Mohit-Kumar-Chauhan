@@ -48,7 +48,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="p-8 h-full flex flex-col font-mono text-sm">
+        <div className="p-4 md:p-8 h-full flex flex-col font-mono text-sm md:text-base">
             <div className="flex-1 overflow-y-auto mb-4">
                 {history.map((line, i) => (
                     <div key={i} className="mb-1">

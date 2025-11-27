@@ -1,11 +1,22 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
-import { GitBranch, Check, Bell, Files, Settings } from 'lucide-react';
+import { GitBranch, Check, Bell, Files, Settings, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 const Layout = ({ children, activeSection, setActiveSection }) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return (
         <div className="flex h-screen bg-editor-bg text-editor-text overflow-hidden font-mono">
+            {/* Mobile Header */}
+            <div className="md:hidden fixed top-0 left-0 right-0 h-10 bg-editor-sidebar border-b border-editor-inactive flex items-center px-4 z-50">
+                <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-400 hover:text-white">
+                    <Menu className="w-5 h-5" />
+                </button>
+                <span className="ml-4 text-sm font-bold text-gray-300">Mohit Kumar Chauhan</span>
+            </div>
+
             {/* Activity Bar (Leftmost thin strip) */}
             <div className="w-12 bg-editor-sidebar border-r border-editor-inactive flex flex-col items-center py-4 hidden md:flex">
                 <div className="mb-4 text-gray-400 hover:text-white cursor-pointer"><Files className="w-6 h-6" /></div>
@@ -14,12 +25,17 @@ const Layout = ({ children, activeSection, setActiveSection }) => {
                 <div className="mb-4 text-gray-500 hover:text-white cursor-pointer"><Settings className="w-6 h-6" /></div>
             </div>
 
-            <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
+            <Sidebar
+                activeSection={activeSection}
+                setActiveSection={setActiveSection}
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+            />
 
             <div className="flex-1 flex flex-col min-w-0">
                 <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
-                <main className="flex-1 overflow-y-auto p-0 relative">
+                <main className="flex-1 overflow-y-auto p-0 relative mt-10 md:mt-0">
                     {/* Line numbers gutter could go here */}
                     <div className="absolute left-0 top-0 bottom-0 w-12 bg-editor-bg border-r border-editor-inactive text-right pr-2 pt-4 text-gray-600 select-none hidden md:block">
                         {Array.from({ length: 50 }).map((_, i) => (

@@ -18,12 +18,12 @@ const Hero = ({ setActiveSection }) => {
 
     return (
         <div className="p-8 h-full flex flex-col justify-center">
-            <div className="max-w-3xl">
-                <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+            <div className="max-w-3xl w-full">
+                <h1 className="text-3xl md:text-6xl font-bold mb-6 md:mb-8 text-white">
                     <span className="text-editor-blue">Hello</span>, World!
                 </h1>
 
-                <div className="bg-editor-active p-6 rounded-lg shadow-xl border border-editor-inactive font-mono text-sm md:text-base overflow-hidden">
+                <div className="bg-editor-active p-4 md:p-6 rounded-lg shadow-xl border border-editor-inactive font-mono text-xs md:text-base overflow-x-auto">
                     <div className="flex space-x-2 mb-4">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -47,13 +47,13 @@ const Hero = ({ setActiveSection }) => {
                 <div className="mt-8">
                     <button
                         onClick={() => setActiveSection('projects')}
-                        className="bg-editor-blue text-white px-6 py-3 rounded hover:bg-blue-600 transition-colors font-bold"
+                        className="bg-editor-blue text-white px-4 md:px-6 py-2 md:py-3 rounded hover:bg-blue-600 transition-colors font-bold text-sm md:text-base"
                     >
                         View Projects
                     </button>
                     <button
                         onClick={() => setActiveSection('contact')}
-                        className="ml-4 border border-editor-blue text-editor-blue px-6 py-3 rounded hover:bg-editor-blue hover:text-white transition-colors font-bold"
+                        className="ml-4 border border-editor-blue text-editor-blue px-4 md:px-6 py-2 md:py-3 rounded hover:bg-editor-blue hover:text-white transition-colors font-bold text-sm md:text-base"
                     >
                         Contact Me
                     </button>

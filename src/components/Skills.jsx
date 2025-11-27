@@ -9,12 +9,12 @@ const Skills = () => {
     };
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8 overflow-y-auto h-full">
             <h2 className="text-2xl font-bold mb-6 text-white">
                 <span className="text-editor-purple">package</span>.<span className="text-editor-blue">json</span>
             </h2>
 
-            <div className="bg-editor-active p-6 rounded-lg border border-editor-inactive font-mono">
+            <div className="bg-editor-active p-4 md:p-6 rounded-lg border border-editor-inactive font-mono text-sm md:text-base overflow-x-auto">
                 <span className="text-editor-text">{'{'}</span>
                 <div className="pl-4">
                     <span className="text-editor-green">"dependencies"</span>: <span className="text-editor-text">{'{'}</span>

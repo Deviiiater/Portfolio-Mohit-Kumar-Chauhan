@@ -11,12 +11,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     ];
 
     return (
-        <div className="flex bg-editor-sidebar h-9 overflow-x-auto border-b border-editor-inactive">
+        <div className="flex bg-editor-sidebar h-9 overflow-x-auto border-b border-editor-inactive scrollbar-hide">
             {tabs.map((tab) => (
                 <button
                     key={tab.id}
                     onClick={() => setActiveSection(tab.id)}
-                    className={`flex items-center px-3 py-2 text-sm min-w-fit border-r border-editor-inactive hover:bg-editor-bg focus:outline-none ${activeSection === tab.id ? 'bg-editor-bg text-white border-t-2 border-t-blue-500' : 'text-gray-500 bg-editor-inactive'
+                    className={`flex items-center px-3 py-2 text-sm min-w-fit border-r border-editor-inactive hover:bg-editor-bg focus:outline-none whitespace-nowrap ${activeSection === tab.id ? 'bg-editor-bg text-white border-t-2 border-t-blue-500' : 'text-gray-500 bg-editor-inactive'
                         }`}
                 >
                     <span className={`mr-2 ${tab.color}`}>Wait...</span>
